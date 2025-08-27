@@ -67,4 +67,13 @@ $y_{1b} = 4$
 $y_{2b} = 3$ \# Paquetes
 
 *Mercado al día*
+$y_{4c} + 5y_{5c} = 80$
+$y_{10c} = 4$
+$0.1y_{7c} + 0.2y_{8c} + y_{9c} \geq 0.5$
 
+**Relación de variables**
+$\sum_{j=a}^c \, y_{ij}=x_i$, $\forall i = 1,...,10$
+
+**Naturaleza de las variables**
+$x_i \geq 0$, $\forall i =1,...,10$
+$y_{ij} \geq 0$, $\forall i =1,...,10 \land \forall j = a,\,b,\,c$
