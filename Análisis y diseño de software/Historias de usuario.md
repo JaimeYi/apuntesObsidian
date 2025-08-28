@@ -41,4 +41,4 @@ Técnica para especificar el comportamiento de un sistema. Un caso de uso es una
 
 Podemos enfocarlos como la interacción entre el usuario y el sistema y podrían tender a una documentación más detallada.
 
-
+Se pueden representar con diagramas (como los de OSI) donde las relaciones obligatorias irán especificadas con la palabra "include", mientras que las relaciones opcionales irán especificadas con la palabra "extend". Los globos contendrán las acciones que debe realizar nuestra aplicación web.
