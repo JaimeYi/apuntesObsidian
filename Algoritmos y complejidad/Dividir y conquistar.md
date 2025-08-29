@@ -15,7 +15,7 @@ $x = a\cdot 10^{n/2} + b \Rightarrow a=48,\,b=27$
 $y = c \cdot 10^{n/2}+d \Rightarrow c=33,\, d=41$
 $p_1 = a\cdot c,\,p_2 = b\cdot d,\,p_3 = b\cdot c,\,p_4 = a\cdot d$
 $x\cdot y = a\cdot c \cdot 10^n+(bc+ad)\cdot 10^{n/2}+bd$
-```
+```python
 d_y_c_naive(x, y):
 	//caso base
 	x o y tienen un solo digito
@@ -41,7 +41,7 @@ d_y_c_naive(x, y):
    R: 4
 3. Cuánto trabajo se realiza, a partir de las llamadas recursivas. 
    R: O(n)
-```
+```python
 karatsuba(x,y):
 	-> Fondo recursivo
 	
@@ -70,7 +70,7 @@ $(bc+ad) = (a+b)(c+d)-ac-bd$
    R: 3
 3. Cuánto trabajo se realiza, a partir de las llamadas recursivas. 
    R: O(n)
-```
+```python
 bbinaria(l, e, i, f):
 	if (i > f):
 		return -1
@@ -90,4 +90,59 @@ bbinaria(l, e, i, f):
 3. Cuánto trabajo se realiza, a partir de las llamadas recursivas. 
    R: O(1), siempre y cuando se pase la lista por referencia y no por copia
 $T_{bbinaria}(n)\in O(log\,n)$
-# Cambiar parámetros de sorting en tarea...
+##### Merge Sort (ejemplo de dividir y conquistar)
+![[Pasted image 20250828115216.png]]
+```python fold title:mergeSort
+def mergeSort(v)
+	if (len(v) == 1):
+		return
+	#----- Dividir -----#
+	a = v[0:len(v)//2]
+	b = v[(len(v)//2): len(v)]
+	
+	#----- Llamadas recursivas -----#
+	mergeSort(a)
+	mergeSort(b)
+	
+	#----- Conquistar -----#
+	merge(v, a, b)
+	return
+```
+- Taza de reducción del tamaño: 2
+- \# de llamadas recursivas: 2
+- Tiempo de ejecución en cada llamada: $O(n)$
+- Tiempo de ejecución total: $T_{mergeSort}(n) \in O(n\,log\,n)$
+- Espacio total que utiliza: $E_{mergeSort}(n) \in O(n)$
+```python fold title:merge
+def merge(v, a, b):
+	posI = 0
+	posD = 0
+	for i in range(len(v)):
+		if (posD == len(b) or a[posI] < b[posD]):
+			v[i] = a[posI]
+			posI += 1
+		else:
+			v[i] = b[posD]
+			posD += 1
+	return
+```
+##### Quick Sort 
+![[Pasted image 20250828115259.png]]
+```python fold title:quickSort
+def quickSort(v, i, f):
+	if (i == f):
+		return
+		
+	#----- Pivotear -----#
+	p = i
+	for (j in range(i+1, f+1)):
+		if (v[j] < v[p]):
+			swap(v[j], v[p+1])
+			swap(v[p], v[p+1])
+			
+	#----- Llamadas recursivas -----#
+	quickSort(v, i, p-1)
+	quickSort(v, p+1, f)
+```
+- Algoritmo **In-place** (se ejecuta sobre el vector inicial)
+- Tiempo de ejecución: $T_{quickSort}(n) \in O(n^2)$
