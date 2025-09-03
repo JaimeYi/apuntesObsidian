@@ -1,16 +1,21 @@
-# INF263-GRUPO-04
+## Actores
+1. Cliente
+2. Servicios de autenticación e identidad (biometria y claveúnica)
+3. Servicios de firma digital (eCert)
+4. Pasarela de pagos
+5. Servicio de información crediticia (Dicom)
+6. Servicio de notificaciones
 ---
-### Integrantes
-En este repositorio se presentarán los avances del grupo 04, cuyos integrantes son:
-- Cristóbal Carrion - 202373598-1
-- Balduino Díaz - 202373626-0
-- Jaime Guzmán - 202373524-8
-- Bastián Rios - 202351551-5
-- **Ayudante tutor:** Maximiliano Tapia
-- **Profesor/a:** Luz Chourio
----
-### Wiki
-Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/JaimeYi/GRUPO04-2025-PROYINF/wiki)
-### Videos
-A continuación, se tiene el listado de videos asociados al proyecto:
-- [Video presentación cliente](https://aula.usm.cl/pluginfile.php/7621199/mod_resource/content/2/video1352931478.mp4)
+## Actores
+- ##### Cliente
+Persona natural que solicitará el crédito de consumo.
+##### Servicios de autenticación e identidad
+Agente externo que validará la identidad del cliente. (Clave Única y biometría facial)
+##### Servicios de firma digital
+Encargado de validar de forma legal los contratos.
+##### Pasarela de pagos
+Permitirá el abono del crédito solicitado como también que el cliente pague sus cuotas. (Transbank, Khipu, etc.)
+##### Servicio de información crediticia
+Organismo que almacena la información crediticia útil para calcular riesgo del cliente. (Equifax, Dicom, etc.)
+##### Servicio de notificaciones
+Medio de comunicación con el cliente. Vía mensajería instantánea, correo electrónico, etc.

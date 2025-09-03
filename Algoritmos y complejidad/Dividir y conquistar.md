@@ -146,3 +146,58 @@ def quickSort(v, i, f):
 ```
 - Algoritmo **In-place** (se ejecuta sobre el vector inicial)
 - Tiempo de ejecución: $T_{quickSort}(n) \in O(n^2)$
+##### Naive
+```python fold title:Naive
+def mul(m1, m2):
+	r = []
+	for i in range(len(m1)):
+		r.append([])
+		sum=0
+		for j in range(len(m2[0])):
+			for k in range(len(m2)):
+				sum += m1[i][k] * m2[k][j]
+			r[i].append(sum)
+	return (r)
+```
+##### dd_ingenuo
+```python fold title:dd_ingenuo
+def mul_dd(m1, m2):
+	#*=
+
+	#=== Dividir ===#
+	a = m1[:]
+	b = m1[:]
+	c = m1[:]
+	d = m1[:]
+	e = m2[:]
+	f = m2[:]
+	g = m2[:]
+	h = m2[:]
+	
+	#=== Recursividad ===#
+	p1 = mul_dd(a,e)
+	.
+	.
+	.
+	py
+	
+	#=== Conquistar ===#
+	r = (ae + bc)
+```
+$T_{mul\_dd} \in O(n^3)$
+##### Strassen
+``p1 = a(f-h)
+``p2 = (a+b)h
+``p3=(c+d)e
+``p4=d(g-e)
+``p5=(a+d)(e+h)
+``p6=(b-d)(g+h)
+``p7=(a-c)(e+f)
+
+```python fold title:Strassen
+
+```
+\# llamadas = 7
+tamaño de los subproblemas = $\frac{n}{2}$
+trabajo en cada fracción $\in O(n^2)$
+$$

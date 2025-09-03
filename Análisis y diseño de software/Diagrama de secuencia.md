@@ -43,3 +43,5 @@ Una flecha desde el Llamador de Mensajes hasta el Receptor de Mensajes especific
 - **Referencia (ref):** El marco hace referencia a una interacción definida en otro diagrama. El marco dibujado cubre las líneas involucradas en la interacción. Puede incluir parámetros y un valor de retorno.
 ##### Ejemplo
 ![[Pasted image 20250827165310.png]]
+
+Flecha continua (mensaje que se envia), flecha punteada (respuesta al mensaje enviado), flecha con punta rellena (se envia mensaje y se espera respuesta), flecha con punta simple (se envia mensaje pero no se envia respuesta)
