@@ -20,3 +20,24 @@ bool cumple_propiedad(vector<int>& comb){
 	}
 }
 ```
+
+```cpp title:generacionDeTodasLasCombinaciones
+vector<int> perm;
+bool generar_permutaciones(vector<bool>& usados, vector<int>& elems){
+	if (perm.size() == usados.size()){
+		return propiedad(perm);
+	}
+	for (int i = 0; i < usados.size(); ++i){
+		if (not usados[i]){
+			usados[i]=true;
+			perm.push_back(elems[i]);
+			if (generar_permutaciones(usados, elems)) return true;
+			perm.pop_back();
+			usados[i] = false;
+		}
+	}
+	return false;
+}
+```
+
+![[apuntesObsidian/Algoritmos y complejidad/Untitled Diagram.svg]]
