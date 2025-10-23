@@ -21,7 +21,8 @@ $T_{prim\_janick\_ingenuo}(n,m)\in O(n\cdot m)$
    ![[Pasted image 20251021102245.png]]
 3. Lista de aristas
    `vector<pair<pair<int,int>,double>>`
-```cpp title:Prim_Janick
+
+```{c++ icon} title:Prim_Janick
 vector<pair<int,int>> prim_janick(vector<vector<pair<int,double>>>& g){
 	vector<bool> c(g.size(),false);
 	priority_queue<pair<double,pair<int,int>>> pq;
