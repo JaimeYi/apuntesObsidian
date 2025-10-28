@@ -22,7 +22,7 @@ $T_{prim\_janick\_ingenuo}(n,m)\in O(n\cdot m)$
 3. Lista de aristas
    `vector<pair<pair<int,int>,double>>`
 
-```{c++ icon} title:Prim_Janick
+```c++ title:Prim_Janick
 vector<pair<int,int>> prim_janick(vector<vector<pair<int,double>>>& g){
 	vector<bool> c(g.size(),false);
 	priority_queue<pair<double,pair<int,int>>> pq;
@@ -56,3 +56,39 @@ vector<pair<int,int>> prim_janick(vector<vector<pair<int,double>>>& g){
 	return (T);
 }
 ```
+
+```python title:prim_janick v2
+prim_janick(G=(V,E), w):
+	cubiertos = {v0}
+	T = {}
+	pq = min_heap_vacio
+	
+	for e in vecinos(vo):
+		pq.push(e)
+		
+	while |cubiertos| < |V|:
+		e = pq.pop()
+		if (e = (v,t) / v in cubiertos and t not in cubiertos):
+			cubiertos = cubiertos union {t}
+			T = T union {e}
+			for e in vecinos(t):
+				pq.push(e)
+	return (T)
+```
+
+$T(n,m) \in O (m\,\,log\,m) \in O(m\,\,log\,n)$
+
+```python title:Kruskal
+Ordenar 
+T = {}
+for e in |E|:
+	if e no hace ciclo en T:
+		T = T union {e}
+utilizar union_find
+```
+
+El usar `prim_janick` o `kruskal` dependerá de la densidad del grafo, para grafos muy densos utilizar `prim_janick`, caso contrario utilizar `kruskal`
+### Teorema: propiedad del corte del MST:
+Si $e$ es una arista en algún corte de $G$, $e$ pertenece a algún MST.
+#### Demostración del teorema por contradicción
+Asumo que $e$ es la arista de menor costo del corte $C(s,\overline{s})$ pero existe un árbol de cobertura mínimo $T^*$ en el que no está $e$.
